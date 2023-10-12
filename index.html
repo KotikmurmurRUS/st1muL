@@ -1,35 +1,245 @@
-var loader = document.getElementById("preloader");
-    window.addEventListener("load", function(){
-  loader.style.display = "none";
-    })
-var f1 = 0;
-const followEmail = document.getElementById("followEmail");
-const b4 = document.getElementById("b4a");
-followEmail.style.display = "none";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VLN Festival</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url(images/background2.jpg) no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+        }
 
-function collaborate(){
-  window.open("https://vlnfest.st1mul.repl.co/pages/collaborate.html");
-}
+        .navbar {
+            position: absolute;
+            width: 80%;
+            left: 10%;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+            border-radius: 0px 0px 20px 20px;
+            box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.5);
+        }
 
-function followEvent(){
-  if (f1 == 0){
-    f1 = 1;
-    followEmail.style.display = "flex";
-    b4.style.display = "flex";
-  }
-}
+        .navbar-logo {
+            float: left;
+            padding: 20px;
+            font-size: 24px;
+            color: white;
+        }
 
-function sendMail(){
-  followEmail.style.display = "none";
-  b4.style.display = "none";
+        .navbar-categories {
+            float: left;
+            padding: 20px;
+            position: relative; /* Add this line */
+        }
 
-  const request = new XMLHttpRequest();
-  request.open("POST", "https://discord.com/api/webhooks/1160813022273622047/qYMngSnlFknHgCaxeSZMzBe32itYU7DgBW95GmoHJ7Djk4QMWcqTbMBckvHLbCt-T-zH");
-  request.setRequestHeader('Content-type', 'application/json');
-  const params = {
-    username: "VLN FEST WEB - Follow",
-    avatar_url: "",
-    content: "A user wants to follow the event. Email: **"+followEmail.value+"**."
-  }
-  request.send(JSON.stringify(params));
-}
+        .navbar-categories a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .navbar-categories a:hover {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+
+        .navbar-divider {
+            width: 1px;
+            height: 40%; /* Adjust the height as needed */
+            background-color: white;
+            position: absolute;
+            right: 33%;
+            top: 25%;
+        }
+
+        .navbar-buttons {
+            float: right; /* Change this line */
+            padding: 20px;
+        }
+
+        .navbar-buttons a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .navbar-buttons a:hover {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+
+        .post {
+            position: absolute;
+            width: 70%;
+            height: 25%;
+            left: 15%;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.5);
+        }
+
+        .post h1 {
+          position: absolute;
+          left: 2%;
+          font-size: 24px;
+          color: #fff;
+          font-weight: bold;
+        }
+        .post p1 {
+          position: absolute;
+          width: 96%;
+          top: 25%;
+          left: 2%;
+          font-size: 18px;
+          color: #fff;
+        }
+
+        .post button {
+          position: absolute;
+          align-items: center;
+          justify-content: center;
+          line-height: 1;
+          text-decoration: none;
+          color: #333333;
+          font-size: 18px;
+          border-radius: 0px;
+          width: 200px;
+          top: 70%;
+          height: 40px;
+          font-weight: bold;
+          border: 2px solid #333333;
+          transition: 0.3s;
+          box-shadow: 5px 5px 0px 0px rgba(51, 51, 51, 1);
+          background-color: #ffffff;
+        }
+        .post button:hover {
+          box-shadow: 0 0 #333;
+          color: #fff;
+          background-color: #333;
+          cursor: pointer;
+        }
+        .b1 {
+          left: 5%;
+        }
+      .b2 {
+          left: 22%;
+        }
+      .b3 {
+        display: none;
+          left: 39%;
+        }
+      .b4 {
+        display: none;
+        left: 65%;
+      }
+      #post1 {
+        top: 20%;
+      }
+      #post2 {
+        top: 50%;
+      }
+      #post3 {
+        top: 80%;
+      }
+      #preloader {
+        background: #111 url(images/load.gif) no-repeat center center;
+        height: 100vh;
+        width: 100%;
+        position: fixed;
+        z-index: 100;
+      }
+
+      @keyframes fade-up {
+        0%{opacity: 0.5;}
+        50%{opacity: 1;}
+        100%{opacity: 0.5;}
+      }
+      
+      #preloader h1 {
+        position: absolute;
+        height: 10%;
+        width: 50%;
+        left: 25%;
+        color: white;
+        text-align: center;
+      }
+      #t1 {
+        top: 35%;
+        font-size: 30px;
+      }
+      #t2 {
+        top: 60%;
+        font-size: 25px;
+        animation: fade-up 1s infinite;
+      }
+      #followEmail{
+        opacity: 0.7;
+        position: absolute;
+        box-shadow: 0px 0px 5px rgba(66,66,66,.75);
+        text-shadow: 0px 0px 5px rgba(66,66,66,.75);
+        border-radius: 4px;
+        height: 35px;
+        width: 300px;
+        top: 70%;
+        left: 40%;
+        font-size: 15px;
+      }
+    </style>
+</head>
+<body>
+  <div id="preloader">
+    <h1 id="t1">VLN FESTIVAL</h1>
+    <h1 id="t2">Loading</p1>
+  </div>
+    <div class="navbar">
+        <div class="navbar-logo">VLN FESTIVAL</div>
+        
+        <!-- First Category -->
+        <div class="navbar-buttons"> <!-- Change class name to "navbar-buttons" -->
+            <a href="#">Announcements</a>
+            <a href="#">Documentation</a>
+            <a href="pages/collaborate.html">Collaborate</a>
+            <div class="navbar-divider"></div> <!-- Vertical line -->
+        </div>
+        
+        <!-- Second Category -->
+        <div class="navbar-buttons"> <!-- Change class name to "navbar-buttons" -->
+            <a href="">Home</a>
+            <a href="pages/rules.html">Rules</a>
+            <a href="pages/media.html">Media</a>
+            <a href="">Contact</a>
+        </div>
+    </div>
+
+    <!-- Content of your homepage goes here -->
+    <div id="post1" class="post">
+    <h1>VLN FEST 2023: First edition!</h1>
+    <p1>Welcome to the brand new musical festival organisation! Including small stage with high-quality sound & colourfull lighting. Our first event is planned 30 & 31 december located under a bridge for new year celebration! It's a public event, free for everyone to visit. Our organisation will be released imediatly on the first festival day! For those who is exited to watch, but is not able to come. There will be a LIVE stream launched, by pairing your Email to the website!</p1>
+      <button class="b1" onclick="visitEvent()">Visit</button>
+      <button class="b2" onclick="followEvent()">Follow</button>
+      <button class="b3" onclick="watchLive()">Watch LIVE</button>
+      <input title="To send mails to our mailbox." id="followEmail" type="email" value="Email"><br>
+      <button id="b4a" class="b4" onclick="sendMail()">Send</button>
+    </div>
+  <div id="post2" class="post">
+    <h1>VLN FEST: Searching for employers!</h1>
+    <p1>Dear reader! This is a brand new musical festival organisation, only few people are working as our staff. If you want to join our staff group, you can collaborate by clicking the button below. You can also help us with upgrading our stage, each donation is a new element in next stages! Your name will also appear on our donation board.</p1>
+      <button class="b1" onclick="collaborate()">Collaborate</button>
+    <button class="b2" onclick="donate()">Donate</button>
+  </div>
+   <script src="script.js"></script> 
+</body>
+</html>
