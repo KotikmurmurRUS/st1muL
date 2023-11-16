@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rules</title>
+  <link rel="icon" type="image/x-icon" href="../images/VLNlogo.png">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url(../images/background3.jpg) no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            position: absolute;
+            width: 80%;
+            left: 10%;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+            border-radius: 0px 0px 20px 20px;
+            box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.5);
+        }
+
+        .navbar-logo {
+            float: left;
+            padding: 20px;
+            font-size: 24px;
+            color: white;
+        }
+
+        .navbar-categories {
+            float: left;
+            padding: 20px;
+            position: relative; /* Add this line */
+        }
+
+        .navbar-categories a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .navbar-categories a:hover {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+
+        .navbar-divider {
+            width: 1px;
+            height: 40%; /* Adjust the height as needed */
+            background-color: white;
+            position: absolute;
+            right: 33%;
+            top: 25%;
+        }
+
+        .navbar-buttons {
+            float: right; /* Change this line */
+            padding: 20px;
+        }
+
+        .navbar-buttons a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .navbar-buttons a:hover {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+
+        .post {
+            position: absolute;
+            width: 50%;
+            height: 75%;
+            left: 25%;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.5);
+        }
+
+        .post h1 {
+          position: absolute;
+          left: 2%;
+          font-size: 24px;
+          color: #fff;
+          font-weight: bold;
+        }
+      .post h2{
+        position: absolute;
+        left: 2%;
+        font-size: 18px;
+        font-weight: bold;
+        text-decoration: underline;
+        color: white;
+      }
+        .post p1 {
+          position: absolute;
+          width: 96%;
+          top: 25%;
+          left: 2%;
+          font-size: 18px;
+          color: #fff;
+        }
+        .b1 {
+          left: 5%;
+        }
+      .b2 {
+          left: 22%;
+        }
+      .b3 {
+        display: none;
+          left: 39%;
+        }
+
+      #post1 {
+        top: 15%;
+      }
+      #post2 {
+        top: 50%;
+      }
+      #post3 {
+        top: 80%;
+      }
+      #preloader {
+        background: #111 url(../images/load.gif) no-repeat center center;
+        height: 100vh;
+        width: 100%;
+        position: fixed;
+        z-index: 100;
+      }
+
+      @keyframes fade-up {
+        0%{opacity: 0.5;}
+        50%{opacity: 1;}
+        100%{opacity: 0.5;}
+      }
+      
+      #preloader h1 {
+        position: absolute;
+        height: 10%;
+        width: 50%;
+        left: 25%;
+        color: white;
+        text-align: center;
+      }
+      #t1 {
+        top: 35%;
+        font-size: 30px;
+      }
+      
+      #t2 {
+        top: 60%;
+        font-size: 25px;
+        animation: fade-up 1s infinite;
+      }
+      
+      #t11 {
+        top: 10%;
+      }
+      #t22 {
+        top: 18%;
+      }
+      #t3 {
+        top: 22%;
+      }
+      #t4 {
+        top: 26%;
+      }
+      #t5 {
+        top: 30%;
+      }
+      #t6 {
+        top: 34%;
+      }
+      #t7 {
+        top: 38%;
+      }
+      #t8 {
+        top: 42%;
+      }
+      #t9{
+        top: 46%;
+      }
+      #t10{
+        top: 50%;
+      }
+      #t111{
+        top: 54%;
+      }
+      #t12{
+        top: 58%;
+      }
+      .post button {
+          position: absolute;
+          align-items: center;
+          justify-content: center;
+          line-height: 1;
+          text-decoration: none;
+          color: #333333;
+          font-size: 18px;
+          border-radius: 0px;
+          width: 100px;
+          top: 70%;
+          height: 40px;
+          font-weight: bold;
+          border: 2px solid #333333;
+          transition: 0.3s;
+          box-shadow: 5px 5px 0px 0px rgba(51, 51, 51, 1);
+          background-color: #ffffff;
+        }
+        .post button:hover {
+          box-shadow: 0 0 #333;
+          color: #fff;
+          background-color: #333;
+          cursor: pointer;
+        }
+        #nextB{
+          right: 10%;
+        }
+        #previousB{
+          left: 10%;
+        }
+    </style>
+</head>
+<body>
+  <div id="preloader">
+    <h1 id="t1">VLN FESTIVAL</h1>
+    <h1 id="t2">Loading</h1>
+  </div>
+    <div class="navbar">
+        <div class="navbar-logo">VLN FESTIVAL</div>
+        
+        <!-- First Category -->
+        <div class="navbar-buttons"> <!-- Change class name to "navbar-buttons" -->
+            <a href="#">Announcements</a>
+            <a href="documentation.html">Documentation</a>
+            <a href="collaborate.html">Collaborate</a>
+            <div class="navbar-divider"></div> <!-- Vertical line -->
+        </div>
+        
+        <!-- Second Category -->
+        <div class="navbar-buttons"> <!-- Change class name to "navbar-buttons" -->
+            <a href="../index.html">Home</a>
+            <a href="">Rules</a>
+            <a href="media.html">Media</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </div>
+
+    <!-- Content of your homepage goes here -->
+    <div id="post1" class="post">
+    <h1 id="rulesName">VLN FEST 2023: Basic rules</h1>
+      <h2 id="t11">1. COMMUNICATION & RESPECT</h2>
+      <p1 id="t22">1.1 Be respectfull when talking with staff or someone else.</p1>
+      <p1 id="t3">1.2 No aggresion expected when communicating.</p1>
+      <p1 id="t4">1.3 Fight, aggresivity is strongly forbidden.</p1>
+      <p1 id="t5">1.4 Use default English & Dutch when talking to our staff.</p1>
+      <p1 id="t6">1.5 Do not disturb our staff when they are busy.</p1>
+      <p1 id="t7">1.6 Vandalism, same with (laptops, tablets,...) not allowed.</p1>
+      <p1 id="t8">1.7 Food & non-alcoholic drinks allowed, alcohol forbidden.</p1>
+      <p1 id="t9">1.8 Pick the correct way to enter the festival zone.</p1>
+      <p1 id="t10">1.9 Do not touch or hit the stage, keep distance >1.5m.</p1>
+      <p1 id="t111">1.10 You are not being expected near or behind the stage.</p1>
+      <p1 id="t12">1.11 Drones & other fly apparatures forbidden for safety.</p1>
+      <button id="nextB" onclick="next()">Next</button>
+      <button id="previousB" onclick="previous()">Previous</button>
+    </div>
+  <script src="rules.js"></script> 
+</body>
+</html>
