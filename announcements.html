@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collaborate</title>
+  <link rel="icon" type="image/x-icon" href="../images/VLNlogo.png">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url(../images/background3.jpg) no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            position: absolute;
+            width: 80%;
+            left: 10%;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+            border-radius: 0px 0px 20px 20px;
+            box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.5);
+        }
+
+        .navbar-logo {
+            float: left;
+            padding: 20px;
+            font-size: 24px;
+            color: white;
+        }
+
+        .navbar-categories {
+            float: left;
+            padding: 20px;
+            position: relative; /* Add this line */
+        }
+
+        .navbar-categories a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .navbar-categories a:hover {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+
+        .navbar-divider {
+            width: 1px;
+            height: 40%; /* Adjust the height as needed */
+            background-color: white;
+            position: absolute;
+            right: 33%;
+            top: 25%;
+        }
+
+        .navbar-buttons {
+            float: right; /* Change this line */
+            padding: 20px;
+        }
+
+        .navbar-buttons a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .navbar-buttons a:hover {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+
+        .post {
+            position: absolute;
+            width: 80%;
+            height: 20%;
+            left: 10%;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.5);
+        }
+
+        .post h1 {
+          position: absolute;
+          left: 2%;
+          font-size: 24px;
+          color: #fff;
+          font-weight: bold;
+        }
+        .post p1 {
+          position: absolute;
+          width: 96%;
+          top: 30%;
+          left: 2%;
+          font-size: 18px;
+          color: #fff;
+        }
+        #wlink {
+          position: absolute;
+          width: 20%;
+          top: 60%;
+          font-size: 19px;
+          color: #4f4;
+          font-weight: bold;
+          left: 20%;
+          text-align: center;
+        }
+        #dlink{
+          position: absolute;
+          width: 20%;
+          top: 60%;
+          font-size: 19px;
+          color: #44f;
+          font-weight: bold;
+          right: 20%;
+          text-align: center;
+        }
+
+        .post button {
+          position: absolute;
+          align-items: center;
+          justify-content: center;
+          line-height: 1;
+          text-decoration: none;
+          color: #333333;
+          font-size: 18px;
+          border-radius: 0px;
+          width: 200px;
+          top: 90%;
+          height: 40px;
+          font-weight: bold;
+          border: 2px solid #333333;
+          transition: 0.3s;
+          box-shadow: 5px 5px 0px 0px rgba(51, 51, 51, 1);
+          background-color: #ffffff;
+        }
+        .post button:hover {
+          box-shadow: 0 0 #333;
+          color: #fff;
+          background-color: #333;
+          cursor: pointer;
+        }
+        .b1 {
+          left: 50%;
+        }
+      .b2 {
+          left: 22%;
+        }
+      .b3 {
+        display: none;
+          left: 39%;
+        }
+      .giveStyle{
+        opacity: 0.7;
+        position: absolute;
+        box-shadow: 0px 0px 5px rgba(66,66,66,.75);
+        text-shadow: 0px 0px 5px rgba(66,66,66,.75);
+        border-radius: 4px;
+        height: 20px;
+        width: 200px;
+      }
+
+      .post label {
+        position:absolute;
+        color:white;
+      }
+
+
+      #post1 {
+        top: 25%;
+      }
+      #post2 {
+        top: 50%;
+      }
+      #post3 {
+        top: 75%;
+      }
+      #preloader {
+        background: #111 url(../images/load.gif) no-repeat center center;
+        height: 100vh;
+        width: 100%;
+        position: fixed;
+        z-index: 100;
+      }
+
+      @keyframes fade-up {
+        0%{opacity: 0.5;}
+        50%{opacity: 1;}
+        100%{opacity: 0.5;}
+      }
+
+      #preloader h1 {
+        position: absolute;
+        height: 10%;
+        width: 50%;
+        left: 25%;
+        color: white;
+        text-align: center;
+      }
+      #t1 {
+        top: 35%;
+        font-size: 30px;
+      }
+      #t2 {
+        top: 60%;
+        font-size: 25px;
+        animation: fade-up 1s infinite;
+      }
+
+      #title {
+        position: absolute;
+        left: 30%;
+        top: 5%;
+        width: 40%;
+        height: 5%;
+        text-align:center;
+        text-decoration: uppercase;
+        font-weight: bold;
+        font-size: 80px;
+        color: white;
+        text-shadow: 0px 0px 16px 0px rgba(0,0,0,0.5);
+      }
+
+      #in1{
+        top: 40%;
+        left: 5%;
+      }
+      #in2{
+        top: 45%;
+        left: 5%;
+      }
+
+      #in3{
+        top: 40%;
+        left: 35%;
+      }
+      #in4{
+        top: 45%;
+        left: 35%;
+      }
+
+      #in5{
+        top: 40%;
+        left: 65%;
+      }
+      #in6{
+        top: 45%;
+        left: 65%;
+      }
+
+      #in7{
+        top: 55%;
+        left: 20%;
+      }
+      #in8{
+        top: 60%;
+        left: 20%;
+      }
+
+      #in9{
+        top: 55%;
+        left: 50%;
+      }
+      #in10{
+        top: 60%;
+        left: 50%;
+      }
+
+      #in11{
+        top: 70%;
+        left: 20%;
+      }
+      #in12{
+        top: 75%;
+        left: 20%;
+      }
+
+      #in13{
+        top: 70%;
+        left: 50%;
+      }
+      #in14{
+        top: 75%;
+        left: 50%;
+      }
+
+      #in15{
+        top: 85%;
+        left: 20%;
+      }
+      #in16{
+        position:absolute;
+        top: 90%;
+        left: 20%;
+      }
+      #in17{
+        position:absolute;
+        top: 90%;
+        left: 23%;
+      }
+      #in18{
+        position:absolute;
+        top: 90%;
+        left: 30%;
+      }
+      #in19{
+        position:absolute;
+        top: 90%;
+        left: 33%;
+      }
+      #in20{
+        position:absolute;
+        top: 85%;
+        left: 50%;
+      }
+      #in21{
+        position:absolute;
+        top: 85%;
+        left: 53%;
+      }
+    </style>
+</head>
+<body>
+  <div id="preloader">
+    <h1 id="t1">VLN FESTIVAL</h1>
+    <h1 id="t2">Loading</p1>
+  </div>
+    <div class="navbar">
+        <div class="navbar-logo">VLN FESTIVAL</div>
+
+        <!-- First Category -->
+        <div class="navbar-buttons"> <!-- Change class name to "navbar-buttons" -->
+            <a href="#">Announcements</a>
+            <a href="documentation.html">Documentation</a>
+            <a href="collaborate.html">Collaborate</a>
+            <div class="navbar-divider"></div> <!-- Vertical line -->
+        </div>
+
+        <!-- Second Category -->
+        <div class="navbar-buttons"> <!-- Change class name to "navbar-buttons" -->
+            <a href="../index.html">Home</a>
+            <a href="rules.html">Rules</a>
+            <a href="media.html">Media</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </div>
+
+    <!-- Content of your homepage goes here -->
+  <h1 id="title">ANNOUNCEMENTS</h1>
+    <div id="post1" class="post">
+    <h1 id="title1">Oops...</h1>
+    <p1 id="desc1">Something went wrong</p1>
+    </div>
+    <div id="post2" class="post">
+    <h1 id="title2">Oops...</h1>
+    <p1 id="desc2">Something went wrong</p1>
+    </div>
+    <div id="post3" class="post">
+    <h1 id="title3">Oops...</h1>
+    <p1 id="desc3">Something went wrong</p1>
+    </div>
+   <script src="documentation.js"></script> 
+</body>
+</html>
