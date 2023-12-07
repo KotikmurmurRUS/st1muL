@@ -43,6 +43,6 @@ post3.style.display = "flex";
 }
 }
 
-let myTitle = "Planning our 1st event!";
-let myDescr = "Dear visitors, we are currently planning our first event. The beginning of our event will be public (outside), most part of the event will be private (inside). Our date is already released and is planned 30 + 31 december 2023. Starting 6PM to 10PM on 30 & 31 december + 3 hours private event on the last festival day. Tickets can be purchased on this website or by communicating with us. Make sure to be jounger than 16, please follow our rules when entering our festival zone(s). No expectations expected, reserver a pass before visiting.";
+let myTitle = "VLN FEST: Christmas edition '23";
+let myDescr = "VLN FEST is a short version of our festival name, that means the size of the event will be also decreased. Christmas edition '23 will be a public event for a part, the rest will be private. You can find all needed information on our website, suggest or contact us by joining our social media channels. Our website & event information is still no
 createPost(myTitle, myDescr);
