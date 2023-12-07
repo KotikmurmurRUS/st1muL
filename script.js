@@ -1,7 +1,7 @@
 var loader = document.getElementById("preloader");
-    window.addEventListener("load", function(){
-  loader.style.display = "none";
-    })
+window.addEventListener("load", function(){
+    loader.style.display = "none";
+})
 var f1 = 0;
 const followEmail = document.getElementById("followEmail");
 const b4 = document.getElementById("b4a");
