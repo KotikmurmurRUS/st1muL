@@ -26,14 +26,15 @@ function checkUserCookie() {
     document.getElementById("l4").style.background = "#c44";
     document.getElementById("l5").style.background = "#c44";
     document.getElementById("l1t").innerHTML = "Radio 2";
-    document.getElementById("l1t").innerHTML = "DJ Nelasta";
-    document.getElementById("l1t").innerHTML = "Black Coffee";
-    document.getElementById("l1t").innerHTML = "Quiet";
-    document.getElementById("l1t").innerHTML = "Quiet";
+    document.getElementById("l2t").innerHTML = "DJ Nelasta";
+    document.getElementById("l3t").innerHTML = "Black Coffee";
+    document.getElementById("l4t").innerHTML = "Quiet";
+    document.getElementById("l5t").innerHTML = "Quiet";
     document.getElementById("postT").innerHTML = "Programmation - Christmas '23";
     document.getElementById("infoDesk").style.display = "flex";
     document.getElementById("arrowDiv").style.background = "#444";
     document.getElementById("arrowDiv").style.left = "12%";
+    document.getElementById("arrowDiv").style.display = "none";
     document.getElementById("extendedName").innerHTML = "Starting soon";
     document.getElementById("extendedDescr").innerHTML = "There is no one that's currently lining up, our festival days will start in a few days. Stay tuned by joining our social media channels.";
     
