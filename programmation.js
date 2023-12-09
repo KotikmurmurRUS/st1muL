@@ -34,7 +34,7 @@ function checkUserCookie() {
     document.getElementById("infoDesk").style.display = "flex";
     document.getElementById("arrowDiv").style.background = "#444";
     document.getElementById("arrowDiv").style.left = "12%";
-    document.getElementById("arrowDiv").style.display = "none";
+    document.getElementById("arrowDiv").style.display = "flex";
     document.getElementById("extendedName").innerHTML = "Starting soon";
     document.getElementById("extendedDescr").innerHTML = "There is no one that's currently lining up, our festival days will start in a few days. Stay tuned by joining our social media channels.";
     
