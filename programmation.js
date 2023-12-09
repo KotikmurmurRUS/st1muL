@@ -12,7 +12,8 @@ function addCookie(name, value, days) {
     expires = "; expires=" + date.toUTCString();
   }
   document.cookie = name + "=" + value + expires + "; path=/";
-  console.log("Added new cookie named " + name + "!")
+  console.log("Added new cookie named " + name + "!");
+  checkUserCookie();
 }
 
 function checkUserCookie() {
@@ -29,6 +30,13 @@ function checkUserCookie() {
     document.getElementById("l1t").innerHTML = "Black Coffee";
     document.getElementById("l1t").innerHTML = "Quiet";
     document.getElementById("l1t").innerHTML = "Quiet";
+    document.getElementById("postT").innerHTML = "Programmation - Christmas '23";
+    document.getElementById("infoDesk").style.display = "flex";
+    document.getElementById("arrowDiv").style.background = "#444";
+    document.getElementById("arrowDiv").style.left = "12%";
+    document.getElementById("extendedName").innerHTML = "Starting soon";
+    document.getElementById("extendedDescr").innerHTML = "There is no one that's currently lining up, our festival days will start in a few days. Stay tuned by joining our social media channels.";
+    
     // Do something here if the condition is met
   } else {
     console.log('Cookie does not exist.');
@@ -38,7 +46,7 @@ function checkUserCookie() {
 
 // Example: Check if the 'User' cookie has a value of 'test'
 var userCookieValue = getCookie('User');
-if (userCookieValue === 'test') {
+if (userCookieValue === 'VLNfest2980_WEB') {
   console.log('User cookie has a value of "test".');
 } else {
   console.log('User cookie does not have a value of "test".');
