@@ -69,4 +69,8 @@ function getCookie(name) {
   return null;
 }
 
+function getAccess(){
+addCookie("User", "VLNfest2980_WEB", 1);
+}
+
 checkUserCookie();
