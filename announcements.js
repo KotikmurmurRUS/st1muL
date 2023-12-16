@@ -44,5 +44,5 @@ post3.style.display = "flex";
 }
 
 let myTitle = "VLN FEST: Christmas edition '23";
-let myDescr = "VLN FEST is a short version of our festival name, that means the size of the event will be also decreased. Christmas edition '23 will be a public event for a part, the rest will be private. You can find all needed information on our website, suggest or contact us by joining our social media channels. Our website & event information is still no
+let myDescr = "VLN FEST is a short version of our festival name, that means the size of the event will be also decreased. Christmas edition '23 will be a public event for a part, the rest will be private. You can find all needed information on our website, suggest or contact us by joining our social media channels. Our website & event information is still not finished with filling.";
 createPost(myTitle, myDescr);
