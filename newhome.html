@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VLN Festival</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" type="image/x-icon" href="VLNlogo.png">
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      #blockA {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: rgb(40, 40, 40);
+      }
+      #blockB {
+        position: absolute;
+        top: 100%;
+        height: 100%;
+        width: 100%;
+        background: rgb(20, 20, 20);
+      }
+      #navbar {
+        position: fixed;
+        width: 70%;
+        left: 15%;
+        height: 60px;
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(10px);
+        border-radius: 0px 0px 20px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+      }
+      #logo {
+        color: #fff;
+        font-size: 24px;
+        font-family: Monospace;
+        font-weight: bold;
+        text-decoration: none;
+      }
+      #circleA {
+        position: absolute;
+        height: 300px;
+        width: 300px;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(10px);
+        border-radius: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      #textA {
+        position: absolute;
+        height: 20%;
+        text-align: center;
+        width: 100%;
+        font-size: 20px;
+        color: #fff;
+        font-family: Monospace;
+        top: 35%;
+      }
+      #titleA {
+        font-weight: bold;
+        position: absolute;
+        text-align: center;
+        top: 35%;
+        height: 65%;
+        width: 100%;
+        color: #fff;
+        font-size: 35px;
+        font-family: Monospace;
+      }
+      #navbar-buttons {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap; /* Allow items to wrap onto the next line */
+        gap: 8px; /* Add gap between buttons */
+      }
+      #navbar-buttons a {
+        color: white;
+        text-decoration: none;
+        margin: 0;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-family: Monospace;
+        font-size: 15px;
+        transition: background-color 0.3s, color 0.3s;
+      }
+      #navbar-buttons a:hover {
+        background-color: #f2f2f2;
+        color: #333;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div id="blockA">
+        <div id="navbar">
+          <div id="logo">VLN FESTIVAL</div>
+          <div id="navbar-buttons">
+            <a href="">Home</a>
+            <a href="">Events</a>
+            <a href="">Media</a>
+            <a href="">Rules</a>
+            <a href="">About</a>
+          </div>
+        </div>
+        <div id="circleA">
+          <p1 id="textA">Welcome to</p1>
+          <h1 id="titleA">VLN FESTIVAL</h1>
+        </div>
+      </div>
+      <div id="blockB">
+      <video src=""></video>
+      <h1 id="titleB">"Compact and easy to install"</h1>
+      </div>
+    </main>
+    <script src="index.js"></script>
+  </body>
+</html>
